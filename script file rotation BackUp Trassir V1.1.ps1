@@ -2,13 +2,13 @@
     # Период в днях старше которого файл считается пригодным к удалению
     [int]$Period = 14,
     # Каталог для просмотра  
-    [String]$PATH = "\\10.0.17.44\Trassir-BackUp\",     
+    [String]$PATH = "\\Адрес сетевой папки\Папка где лежат бэкапы\" ,    
    
     [bool]$recurse = $true
 )
 
 # Путь к файлу логов
-$logFile = "W:\Skripts\logs\logfiles\logfile_rotation_Trassir$(Get-Date -Format 'dd-MM-yyyy').txt"
+$logFile = "С:\\Путь где будет создаваться файл для логирования$(Get-Date -Format 'dd-MM-yyyy').txt"
 
 # Фильтр для получения старых файлов
 filter Get-OldFiles {
@@ -39,3 +39,4 @@ try {
 }
 
 Add-Content -Path $logFile -Value "[$(Get-Date)] Скрипт завершен."
+
